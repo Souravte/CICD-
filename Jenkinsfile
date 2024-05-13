@@ -1,9 +1,10 @@
 pipeline {
-  agent any
+  agent none
   stages {
-    stage('Log') {
+    stage('Checkout Code') {
       steps {
         sh 'ls -la'
+        git(url: 'https://github.com/Souravte/fullstack-software', branch: 'main')
       }
     }
 
